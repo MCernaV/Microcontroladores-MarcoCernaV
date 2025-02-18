@@ -1,0 +1,35 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_2_Marco_Cerna_V\Laboratorio_2_Marco_Cerna_V\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_2_Marco_Cerna_V\Laboratorio_2_Marco_Cerna_V\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc</FILE>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_2_Marco_Cerna_V\Laboratorio_2_Marco_Cerna_V\Debug\Laboratorio_2_Marco_Cerna_V.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Laboratorio_2_Marco_Cerna_V.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Laboratorio_2_Marco_Cerna_V.map</FILE>
+  <FILE>Laboratorio_2_Marco_Cerna_V.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <CONFIG><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_2_Marco_Cerna_V\Laboratorio_2_Marco_Cerna_V\main.asm</FILE><LINE>72</LINE></CONFIG>
+  <Tabla><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_2_Marco_Cerna_V\Laboratorio_2_Marco_Cerna_V\main.asm</FILE><LINE>125</LINE></Tabla>
+  <MAIN><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_2_Marco_Cerna_V\Laboratorio_2_Marco_Cerna_V\main.asm</FILE><LINE>78</LINE></MAIN>
+  <INCREMENTAR><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_2_Marco_Cerna_V\Laboratorio_2_Marco_Cerna_V\main.asm</FILE><LINE>86</LINE></INCREMENTAR>
+  <DECREMENTAR><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_2_Marco_Cerna_V\Laboratorio_2_Marco_Cerna_V\main.asm</FILE><LINE>106</LINE></DECREMENTAR>
+  <ANTIREBOTE><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_2_Marco_Cerna_V\Laboratorio_2_Marco_Cerna_V\main.asm</FILE><LINE>118</LINE></ANTIREBOTE>
+  <REINICIAR><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_2_Marco_Cerna_V\Laboratorio_2_Marco_Cerna_V\main.asm</FILE><LINE>98</LINE></REINICIAR>
+  <DELAY_LOOP><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_2_Marco_Cerna_V\Laboratorio_2_Marco_Cerna_V\main.asm</FILE><LINE>120</LINE></DELAY_LOOP>
+ </LABELS>
+</ASSEMBLER_INFO>

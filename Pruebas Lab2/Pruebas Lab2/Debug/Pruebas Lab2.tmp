@@ -1,0 +1,44 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\Debug\Pruebas Lab2.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Pruebas Lab2.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Pruebas Lab2.map</FILE>
+  <FILE>Pruebas Lab2.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <setup><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>43</LINE></setup>
+  <TABLA_SEGMENTOS><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>36</LINE></TABLA_SEGMENTOS>
+  <MOSTRAR_NUM><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>192</LINE></MOSTRAR_NUM>
+  <MAIN><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>86</LINE></MAIN>
+  <ESPERAR_DES><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>88</LINE></ESPERAR_DES>
+  <OVERFLOW><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>97</LINE></OVERFLOW>
+  <SKIP_CONTADOR><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>121</LINE></SKIP_CONTADOR>
+  <SKIP_LED><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>120</LINE></SKIP_LED>
+  <CHECK_BOTONES><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>133</LINE></CHECK_BOTONES>
+  <SALTAR_B1><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>144</LINE></SALTAR_B1>
+  <INCREMENTO><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>163</LINE></INCREMENTO>
+  <SALTAR_B2><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>153</LINE></SALTAR_B2>
+  <DECREMENTO><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>177</LINE></DECREMENTO>
+  <DELAY_ANTIREBOTE><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>203</LINE></DELAY_ANTIREBOTE>
+  <NO_RESET_INC><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>170</LINE></NO_RESET_INC>
+  <NO_RESET_DEC><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>184</LINE></NO_RESET_DEC>
+  <L1><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>205</LINE></L1>
+  <L2><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>206</LINE></L2>
+ </LABELS>
+</ASSEMBLER_INFO>
