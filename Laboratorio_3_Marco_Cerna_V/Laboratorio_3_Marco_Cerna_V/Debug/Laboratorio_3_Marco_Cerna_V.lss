@@ -1,10 +1,10 @@
 
-AVRASM ver. 2.2.8  C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_3_Marco_Cerna_V\Laboratorio_3_Marco_Cerna_V\main.asm Tue Feb 18 01:17:05 2025
+AVRASM ver. 2.2.8  C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_3_Marco_Cerna_V\Laboratorio_3_Marco_Cerna_V\main.asm Tue Feb 18 18:52:39 2025
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
-C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_3_Marco_Cerna_V\Laboratorio_3_Marco_Cerna_V\main.asm(9): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328pdef.inc'
+C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_3_Marco_Cerna_V\Laboratorio_3_Marco_Cerna_V\main.asm(10): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
-C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_3_Marco_Cerna_V\Laboratorio_3_Marco_Cerna_V\main.asm(9): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328pdef.inc'
+C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_3_Marco_Cerna_V\Laboratorio_3_Marco_Cerna_V\main.asm(10): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
                                  
                                  ;*****************************************************************
                                  
@@ -994,7 +994,8 @@ C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laborato
                                  ; Author : Marco Cerna V.
                                  ;*****************************************************************
                                  
-                                 .include "m328pdef.inc"
+                                 
+                                 .include "m328Pdef.inc"
                                  
                                  ;***** Created: 2011-02-09 12:03 ******* Source: ATmega328P.xml **********
                                  ;*************************************************************************
@@ -1039,72 +1040,206 @@ C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laborato
                                  
                                  ; ***** END OF FILE ******************************************************
                                  
-                                 .def temp = r16
-                                 .def counter = r17
-                                 
                                  .org 0x0000
-000000 c006                          rjmp START          ; Vector de reset
-                                 .org PCI0addr          ; Dirección de la interrupción PCINT0 (on-change)
-000006 c00f                          rjmp ISR_ON_CHANGE  ; Rutina de interrupción para on-change
+000000 c006                          rjmp RESET              
+                                 //.org OC0Aaddr
+000001 c033                          rjmp TIMER0_COMPA_ISR   ; Vector de interrupción para Timer0 Compare Match A
+                                 .org PCI0addr           // Dirección de la Interrupción PCINT0 (on-change)
+000006 c017                          RJMP ISR_ON_CHANGE  // Rutina de Interrupción 
                                  
-                                 START:
-000007 ef0f                          ldi temp, 0xFF
-000008 b907                          out DDRC, temp      ; Configura PORTC como salida (LEDs)
-000009 e000                          ldi temp, 0x00
-00000a b904                          out DDRB, temp      ; Configura PORTB como entrada (pushbuttons)
-00000b e108                          ldi temp, (1 << PB3) | (1 << PB4) ; Habilita pull-ups internos en PB0 y PB1
-00000c b905                          out PORTB, temp
                                  
-                                     ; Configura interrupciones on-change para PB0 y PB1
-00000d e001                          ldi temp, (1 << PCIE0)            ; Habilita PCINT0 (on-change en PORTB)
-00000e 9300 0068                     sts PCICR, temp
-000010 e003                          ldi temp, (1 << PCINT0) | (1 << PCINT1) ; Habilita PCINT0 y PCINT1 (PB0 y PB1)
-000011 9300 006b                     sts PCMSK0, temp
+                                 ;--------------------------------------
+                                 ; Definición de registros utilizados
+                                 .def DISPLAY   = r16         ; Variable que almacena el dígito actual (0-9)
+                                 .def CONTADOR = r17         ; Contador de interrupciones (~16 ms cada una)
+                                 .def temp    = r18  
+                                 .def CONTADOR2 = r19    
                                  
-000013 e010                          ldi counter, 0x00   ; Inicializa el contador en 0
-000014 9478                          sei                 ; Habilita interrupciones globales
+                                 ;--------------------------------------
+                                 ; Rutina de reset
+                                 
+                                 RESET:
+                                     ; Inicializa el Stack Pointer
+000007 ef0f                          ldi r16, low(RAMEND)
+000008 bf0d                          out SPL, r16
+000009 e008                          ldi r16, high(RAMEND)
+00000a bf0e                          out SPH, r16
+                                 
+00000b ef2f                          ldi temp, 0xFF         
+00000c b92a                          out DDRD, temp
+                                 
+00000d ef2f                      	ldi temp, 0xFF         
+00000e b927                          out DDRC, temp
+                                 
+                                     ; Inicializa el display en 0
+00000f e000                          LDI DISPLAY, 0
+000010 d02e                          RCALL DISPLAY_ACTU
+                                 
+000011 e020                          LDI temp, 0x00      
+000012 b924                          OUT DDRB, temp						// Configurar PORTB como entrada
+000013 e128                          LDI temp, (1 << PB3) | (1 << PB4)	// Activar pull-ups Internos en PB3 y PB4
+000014 b925                          OUT PORTB, temp
+                                 
+000015 e021                          LDI temp, (1 << PCIE0)             // Habilitar PCINT en PORTB
+000016 9320 0068                     STS PCICR, temp
+000018 e128                          LDI temp, (1 << PCINT3) | (1 << PCINT4) // Habilitar Interrupciones en PB3 y PB4
+000019 9320 006b                     STS PCMSK0, temp
+                                 
+00001b e030                          LDI CONTADOR2, 0x00   
+                                 
+                                 
+                                    /* LDI temp, (1<<WGM01)   // Setear el Timer 0 en modo CTC 
+                                 	OUT TCCR0A, temp
+                                 
+                                     LDI	 temp, (1<<CS02)|(1<<CS00) 
+                                     OUT TCCR0B, temp
+                                 
+                                     LDI temp, 100         
+                                     OUT OCR0A, temp
+                                 
+                                     LDI temp, (1<<OCIE0A)
+                                     STS TIMSK0, temp */
+                                 
+                                     ; Habilita interrupciones globales
+00001c 9478                          SEI
                                  
                                  MAIN_LOOP:
-000015 cfff                          rjmp MAIN_LOOP      ; Bucle infinito (todo se maneja por interrupciones)
+00001d cfff                          rjmp MAIN_LOOP          
                                  
-                                 ; Rutina de interrupción para on-change
                                  ISR_ON_CHANGE:
-000016 b103                          in temp, PINB       ; Lee el estado actual de PORTB
-000017 ff03                          sbrs temp, PB3      ; Si PB0 está en bajo (botón incrementar presionado)
-000018 d003                          rcall INCREMENT     ; Llama a la rutina de incremento
-000019 ff04                          sbrs temp, PB4      ; Si PB1 está en bajo (botón decrementar presionado)
-00001a d006                          rcall DECREMENT     ; Llama a la rutina de decremento
-00001b 9518                          reti                ; Retorna de la interrupción
+00001e b123                          IN temp, PINB     
+00001f ff23                          SBRS temp, PB3        // Si PB3 está en bajo (botón incrementar presionado)
+000020 d003                          RCALL INCREMENTO     // Llama a incremento
+000021 ff24                          SBRS temp, PB4      // Si PB4 está en bajo (botón decrementar presionado)
+000022 d006                          RCALL DECREMENTO   // Llama a decremento
+000023 9518                          RETI              // Sale de la interrupción
                                  
-                                 ; Rutina para incrementar el contador
-                                 INCREMENT:
-00001c d00c                          rcall DELAY         ; Antirebote
-00001d 9513                          inc counter         ; Incrementa el contador
-00001e 701f                          andi counter, 0x0F  ; Mantiene el contador en 4 bits (0-15)
-00001f d006                          rcall UPDATE_LEDS   ; Actualiza los LEDs
-000020 9508                          ret
+                                 //*****************************
+                                 // INCREMENTAR CONTADOR
+                                 //*****************************
+                                 INCREMENTO:
+000024 d00c                          RCALL DELAY         // Antirebote
+000025 9513                          INC CONTADOR         
+000026 701f                          ANDI CONTADOR, 0x0F  // Mantiene el contador en 4 bits (0-15)
+000027 d006                          RCALL ACTU_LEDS   // Actualiza los LEDs
+000028 9508                          RET
                                  
-                                 ; Rutina para decrementar el contador
-                                 DECREMENT:
-000021 d007                          rcall DELAY         ; Antirebote
-000022 951a                          dec counter         ; Decrementa el contador
-000023 701f                          andi counter, 0x0F  ; Mantiene el contador en 4 bits (0-15)
-000024 d001                          rcall UPDATE_LEDS   ; Actualiza los LEDs
-000025 9508                          ret
+                                 //*****************************
+                                 // DECREMENTAR CONTADOR
+                                 //*****************************
+                                 DECREMENTO:
+000029 d007                          RCALL DELAY         // Antirebote
+00002a 951a                          DEC CONTADOR         
+00002b 701f                          ANDI CONTADOR, 0x0F  // Mantiene el contador en 4 bits (0-15)
+00002c d001                          RCALL ACTU_LEDS   
+00002d 9508                          RET
                                  
-                                 ; Actualiza los LEDs con el valor del contador
-                                 UPDATE_LEDS:
-000026 2f01                          mov temp, counter
-000027 b908                          out PORTC, temp     ; Muestra el valor del contador en los LEDs
-000028 9508                          ret
+                                 //*****************************
+                                 // ACTUALIZAR LEDS
+                                 //*****************************
+                                 ACTU_LEDS:
+00002e 2f21                          MOV temp, CONTADOR
+00002f b928                          OUT PORTC, temp     
+000030 9508                          RET
                                  
-                                 ; Retardo para antirebote
+                                 //*****************************
+                                 // ANTIREBOTE
+                                 //*****************************
                                  DELAY:
-000029 ef2f                          ldi r18, 0xFF       ; Retardo simple
+000031 ef2f                          LDI r18, 0xFF       
                                  DELAY_LOOP:
-00002a 952a                          dec r18
-00002b f7f1                          brne DELAY_LOOP
-00002c 9508                          ret
+000032 952a                          DEC r18
+000033 f7f1                          BRNE DELAY_LOOP
+000034 9508                          RET 
+                                 
+                                 TIMER0_COMPA_ISR:
+                                 
+000035 9513                          INC CONTADOR             
+000036 3614                          CPI CONTADOR, 100         
+000037 f431                          BRNE SALIR
+                                 	//Si llega a 10 
+000038 e010                          LDI CONTADOR, 0
+000039 9503                          INC DISPLAY               ; Incrementa el dígito
+00003a 300a                          CPI DISPLAY, 10
+00003b f008                          BRLO NO_RESET
+00003c e000                          LDI DISPLAY, 0            ; Vuelve a 0 al llegar a 10
+                                 NO_RESET:
+00003d d001                          RCALL DISPLAY_ACTU    ; Actualiza el display
+                                 
+                                 SALIR: 
+00003e 9518                          RETI
+                                 
+                                 DISPLAY_ACTU:
+00003f 3000                          CPI DISPLAY, 0
+000040 f091                          BREQ CERO
+000041 3001                          CPI DISPLAY, 1
+000042 f091                          BREQ UNO
+000043 3002                          CPI DISPLAY, 2
+000044 f091                          BREQ DOS
+000045 3003                          CPI DISPLAY, 3
+000046 f091                          BREQ TRES
+000047 3004                          CPI DISPLAY, 4
+000048 f091                          BREQ CUATRO
+000049 3005                          CPI DISPLAY, 5
+00004a f091                          BREQ CINCO
+00004b 3006                          CPI DISPLAY, 6
+00004c f091                          BREQ SEIS
+00004d 3007                          CPI DISPLAY, 7
+00004e f091                          BREQ SIETE
+00004f 3008                          CPI DISPLAY, 8
+000050 f091                          BREQ OCHO
+000051 3009                          CPI DISPLAY, 9
+000052 f091                          BREQ NUEVE
+                                 
+                                 CERO:   
+000053 e32f                      ldi temp, 0x3F  
+000054 c011                      rjmp DISP_OUT
+                                 
+                                 UNO:    
+000055 e026                      ldi temp, 0x06  
+000056 c00f                      rjmp DISP_OUT
+                                 
+                                 DOS:    
+000057 e52b                      ldi temp, 0x5B 
+000058 c00d                      rjmp DISP_OUT
+                                 
+                                 TRES:  
+000059 e42f                      ldi temp, 0x4F 
+00005a c00b                      rjmp DISP_OUT
+                                 
+                                 CUATRO:   
+00005b e626                      ldi temp, 0x66  
+00005c c009                      rjmp DISP_OUT
+                                 
+                                 CINCO:   
+00005d e62d                      ldi temp, 0x6D  
+00005e c007                      rjmp DISP_OUT
+                                 
+                                 SEIS:    
+00005f e72d                      ldi temp, 0x7D  
+000060 c005                      rjmp DISP_OUT
+                                 
+                                 SIETE:  
+000061 e027                      ldi temp, 0x07  
+000062 c003                      rjmp DISP_OUT
+                                 
+                                 OCHO:  
+000063 e72f                      ldi temp, 0x7F  
+000064 c001                      rjmp DISP_OUT
+                                 
+                                 NUEVE:   
+000065 e62f                      ldi temp, 0x6F  
+                                 
+                                 DISP_OUT:
+000066 b92b                          out PORTD, temp      
+000067 9508                          ret
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 
 
 
 RESOURCE USE INFORMATION
@@ -1124,37 +1259,37 @@ counted separately from r26..r31 here.
 "ATmega328P" register use summary:
 x  :   0 y  :   0 z  :   0 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16:  15 r17:   6 r18:   2 r19:   0 r20:   0 
+r13:   0 r14:   0 r15:   0 r16:  18 r17:   8 r18:  30 r19:   1 r20:   0 
 r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 
 r29:   0 r30:   0 r31:   0 
-Registers used: 3 out of 35 (8.6%)
+Registers used: 4 out of 35 (11.4%)
 
 "ATmega328P" instruction use summary:
 .lds  :   0 .sts  :   0 adc   :   0 add   :   0 adiw  :   0 and   :   0 
 andi  :   2 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
-brcc  :   0 brcs  :   0 break :   0 breq  :   0 brge  :   0 brhc  :   0 
-brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
-brne  :   1 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
+brcc  :   0 brcs  :   0 break :   0 breq  :  10 brge  :   0 brhc  :   0 
+brhs  :   0 brid  :   0 brie  :   0 brlo  :   1 brlt  :   0 brmi  :   0 
+brne  :   2 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
 brvs  :   0 bset  :   0 bst   :   0 call  :   0 cbi   :   0 cbr   :   0 
 clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
-cpi   :   0 cpse  :   0 dec   :   2 eor   :   0 fmul  :   0 fmuls :   0 
-fmulsu:   0 icall :   0 ijmp  :   0 in    :   1 inc   :   1 jmp   :   0 
-ld    :   0 ldd   :   0 ldi   :   7 lds   :   0 lpm   :   0 lsl   :   0 
+cpi   :  12 cpse  :   0 dec   :   2 eor   :   0 fmul  :   0 fmuls :   0 
+fmulsu:   0 icall :   0 ijmp  :   0 in    :   1 inc   :   3 jmp   :   0 
+ld    :   0 ldd   :   0 ldi   :  23 lds   :   0 lpm   :   0 lsl   :   0 
 lsr   :   0 mov   :   1 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
-neg   :   0 nop   :   0 or    :   0 ori   :   0 out   :   4 pop   :   0 
-push  :   0 rcall :   6 ret   :   4 reti  :   1 rjmp  :   3 rol   :   0 
+neg   :   0 nop   :   0 or    :   0 ori   :   0 out   :   8 pop   :   0 
+push  :   0 rcall :   8 ret   :   5 reti  :   2 rjmp  :  13 rol   :   0 
 ror   :   0 sbc   :   0 sbci  :   0 sbi   :   0 sbic  :   0 sbis  :   0 
 sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   2 sec   :   0 seh   :   0 
 sei   :   1 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
 sez   :   0 sleep :   0 spm   :   0 st    :   0 std   :   0 sts   :   2 
 sub   :   0 subi  :   0 swap  :   0 tst   :   0 wdr   :   0 
-Instructions used: 15 out of 113 (13.3%)
+Instructions used: 18 out of 113 (15.9%)
 
 "ATmega328P" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x00005a     80      0     80   32768   0.2%
+[.cseg] 0x000000 0x0000d0    200      0    200   32768   0.6%
 [.dseg] 0x000100 0x000100      0      0      0    2048   0.0%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 
