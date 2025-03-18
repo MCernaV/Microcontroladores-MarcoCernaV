@@ -1,0 +1,65 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc</FILE>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\Debug\MODO_EDICION_DIAS.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>MODO_EDICION_DIAS.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>MODO_EDICION_DIAS.map</FILE>
+  <FILE>MODO_EDICION_DIAS.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <mes><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>21</LINE></mes>
+  <dia><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>22</LINE></dia>
+  <display_flag><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>23</LINE></display_flag>
+  <contador_seg><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>24</LINE></contador_seg>
+  <unidades><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>25</LINE></unidades>
+  <decenas><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>26</LINE></decenas>
+  <botones_prev><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>27</LINE></botones_prev>
+  <modo><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>28</LINE></modo>
+  <tabla_digitos><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>29</LINE></tabla_digitos>
+  <main><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>39</LINE></main>
+  <TIMER0_ISR><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>108</LINE></TIMER0_ISR>
+  <tabla_max_dias><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>37</LINE></tabla_max_dias>
+  <loop><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>101</LINE></loop>
+  <leer_botones><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>217</LINE></leer_botones>
+  <multiplexar_displays><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>135</LINE></multiplexar_displays>
+  <actualizar_segundero><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>124</LINE></actualizar_segundero>
+  <fin_segundero><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>131</LINE></fin_segundero>
+  <modo_dia><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>169</LINE></modo_dia>
+  <modo_mes><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>140</LINE></modo_mes>
+  <mostrar_decenas_mes><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>157</LINE></mostrar_decenas_mes>
+  <mostrar_unidades_mes><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>145</LINE></mostrar_unidades_mes>
+  <mostrar_decenas_dia><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>186</LINE></mostrar_decenas_dia>
+  <mostrar_unidades_dia><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>174</LINE></mostrar_unidades_dia>
+  <convertir_decimal><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>201</LINE></convertir_decimal>
+  <calcular_decenas><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>203</LINE></calcular_decenas>
+  <fin_conversion><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>209</LINE></fin_conversion>
+  <cambiar_modo><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>314</LINE></cambiar_modo>
+  <procesar_dia><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>241</LINE></procesar_dia>
+  <procesar_mes><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>234</LINE></procesar_mes>
+  <ajustar_mes><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>251</LINE></ajustar_mes>
+  <validar_mes><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>260</LINE></validar_mes>
+  <guardar_mes><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>264</LINE></guardar_mes>
+  <actualizar_display_mes><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>280</LINE></actualizar_display_mes>
+  <ajustar_dia><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>269</LINE></ajustar_dia>
+  <limitar_dia><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>290</LINE></limitar_dia>
+  <actualizar_display_dia><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>285</LINE></actualizar_display_dia>
+  <dia_valido><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>307</LINE></dia_valido>
+  <fin_limite><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_DIAS\MODO_EDICION_DIAS\main.asm</FILE><LINE>311</LINE></fin_limite>
+ </LABELS>
+</ASSEMBLER_INFO>

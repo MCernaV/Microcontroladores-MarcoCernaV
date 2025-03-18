@@ -22,15 +22,15 @@
   <FILE>Pruebas Lab2.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <setup><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>43</LINE></setup>
+  <setup><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>47</LINE></setup>
   <TABLA_SEGMENTOS><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>36</LINE></TABLA_SEGMENTOS>
   <MOSTRAR_NUM><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>192</LINE></MOSTRAR_NUM>
-  <MAIN><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>86</LINE></MAIN>
-  <ESPERAR_DES><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>88</LINE></ESPERAR_DES>
-  <OVERFLOW><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>97</LINE></OVERFLOW>
-  <SKIP_CONTADOR><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>121</LINE></SKIP_CONTADOR>
-  <SKIP_LED><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>120</LINE></SKIP_LED>
-  <CHECK_BOTONES><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>133</LINE></CHECK_BOTONES>
+  <MAIN><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>89</LINE></MAIN>
+  <ESPERAR_DES><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>91</LINE></ESPERAR_DES>
+  <OVERFLOW><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>100</LINE></OVERFLOW>
+  <SKIP_CONTADOR><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>123</LINE></SKIP_CONTADOR>
+  <SKIP_LED><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>122</LINE></SKIP_LED>
+  <CHECK_BOTONES><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>134</LINE></CHECK_BOTONES>
   <SALTAR_B1><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>144</LINE></SALTAR_B1>
   <INCREMENTO><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>163</LINE></INCREMENTO>
   <SALTAR_B2><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas Lab2\Pruebas Lab2\main.asm</FILE><LINE>153</LINE></SALTAR_B2>

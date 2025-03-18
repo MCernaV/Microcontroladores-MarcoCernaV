@@ -1,0 +1,59 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc</FILE>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\Debug\MODO_RELOJ.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>MODO_RELOJ.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>MODO_RELOJ.map</FILE>
+  <FILE>MODO_RELOJ.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <tabla_digitos><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>12</LINE></tabla_digitos>
+  <contador_unidades_min><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>13</LINE></contador_unidades_min>
+  <contador_decenas_min><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>14</LINE></contador_decenas_min>
+  <contador_unidades_hora><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>15</LINE></contador_unidades_hora>
+  <contador_decenas_hora><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>16</LINE></contador_decenas_hora>
+  <contador_minutos><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>17</LINE></contador_minutos>
+  <contador_horas><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>18</LINE></contador_horas>
+  <contador_segundos><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>19</LINE></contador_segundos>
+  <estado_led><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>20</LINE></estado_led>
+  <contador_parpadeo><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>21</LINE></contador_parpadeo>
+  <RESET><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>29</LINE></RESET>
+  <TIMER0_COMPA><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>97</LINE></TIMER0_COMPA>
+  <INICIAR_TABLA_DIGITOS><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>72</LINE></INICIAR_TABLA_DIGITOS>
+  <ACTUALIZAR_DISPLAYS_MINUTOS><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>219</LINE></ACTUALIZAR_DISPLAYS_MINUTOS>
+  <ACTUALIZAR_DISPLAYS_HORAS><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>237</LINE></ACTUALIZAR_DISPLAYS_HORAS>
+  <MAIN_LOOP><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>68</LINE></MAIN_LOOP>
+  <MOSTRAR_RELOJ><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>144</LINE></MOSTRAR_RELOJ>
+  <NO_SEGUNDO><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>136</LINE></NO_SEGUNDO>
+  <APAGAR_LED><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>120</LINE></APAGAR_LED>
+  <ACTUALIZAR_TIEMPO><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>123</LINE></ACTUALIZAR_TIEMPO>
+  <GUARDAR_SEGUNDOS><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>133</LINE></GUARDAR_SEGUNDOS>
+  <INCREMENTAR_TIEMPO_AUTO><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>194</LINE></INCREMENTAR_TIEMPO_AUTO>
+  <APAGAR_DISPLAYS><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>170</LINE></APAGAR_DISPLAYS>
+  <MOSTRAR_DIGITO><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>177</LINE></MOSTRAR_DIGITO>
+  <DELAY_MULTIPLEX><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>187</LINE></DELAY_MULTIPLEX>
+  <DELAY_LOOP><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>189</LINE></DELAY_LOOP>
+  <GUARDAR_MINUTO><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>213</LINE></GUARDAR_MINUTO>
+  <GUARDAR_HORA><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>209</LINE></GUARDAR_HORA>
+  <DECENAS_MIN><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>224</LINE></DECENAS_MIN>
+  <UNIDADES_MIN><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>230</LINE></UNIDADES_MIN>
+  <DECENAS_HORA><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>242</LINE></DECENAS_HORA>
+  <UNIDADES_HORA><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_RELOJ\MODO_RELOJ\main.asm</FILE><LINE>248</LINE></UNIDADES_HORA>
+ </LABELS>
+</ASSEMBLER_INFO>

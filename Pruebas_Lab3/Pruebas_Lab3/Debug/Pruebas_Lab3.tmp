@@ -10,7 +10,7 @@
  <SOURCE_FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</SOURCE_FILE>
  <INCLUDED_FILES>
   <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc</FILE>
-  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328pdef.inc</FILE>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M328PDEF.INC</FILE>
  </INCLUDED_FILES>
  <OBJECT_FILES>
   <FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\Debug\Pruebas_Lab3.obj</FILE>
@@ -23,13 +23,29 @@
   <FILE>Pruebas_Lab3.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <START><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>11</LINE></START>
-  <ISR_ON_CHANGE><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>39</LINE></ISR_ON_CHANGE>
-  <MAIN_LOOP><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>33</LINE></MAIN_LOOP>
-  <INCREMENT><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>50</LINE></INCREMENT>
-  <DECREMENT><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>60</LINE></DECREMENT>
-  <DELAY><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>78</LINE></DELAY>
-  <UPDATE_LEDS><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>70</LINE></UPDATE_LEDS>
-  <DELAY_LOOP><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>80</LINE></DELAY_LOOP>
+  <RESET><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>19</LINE></RESET>
+  <PCINT0_ISR><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>76</LINE></PCINT0_ISR>
+  <TIMER0_COMPA_ISR><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>99</LINE></TIMER0_COMPA_ISR>
+  <MAIN_LOOP><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>69</LINE></MAIN_LOOP>
+  <NO_INC><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>85</LINE></NO_INC>
+  <NO_DEC><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>90</LINE></NO_DEC>
+  <VALIDO_UNIDADES><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>117</LINE></VALIDO_UNIDADES>
+  <VALIDO_DECENAS><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>122</LINE></VALIDO_DECENAS>
+  <MOSTRAR_UNIDADES><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>134</LINE></MOSTRAR_UNIDADES>
+  <MOSTRAR_DECENAS><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>127</LINE></MOSTRAR_DECENAS>
+  <DISPLAY_ACTU><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>162</LINE></DISPLAY_ACTU>
+  <CONTAR_TIEMPO><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>140</LINE></CONTAR_TIEMPO>
+  <SALIR_ISR><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>155</LINE></SALIR_ISR>
+  <CERO><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>187</LINE></CERO>
+  <UNO><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>189</LINE></UNO>
+  <DOS><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>191</LINE></DOS>
+  <TRES><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>193</LINE></TRES>
+  <CUATRO><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>195</LINE></CUATRO>
+  <CINCO><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>197</LINE></CINCO>
+  <SEIS><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>199</LINE></SEIS>
+  <SIETE><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>201</LINE></SIETE>
+  <OCHO><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>203</LINE></OCHO>
+  <NUEVE><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>205</LINE></NUEVE>
+  <DISP_OUT><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Pruebas_Lab3\Pruebas_Lab3\main.asm</FILE><LINE>207</LINE></DISP_OUT>
  </LABELS>
 </ASSEMBLER_INFO>

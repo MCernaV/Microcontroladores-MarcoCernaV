@@ -1,0 +1,68 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc</FILE>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\Debug\MOSTRAR__FECHA.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>MOSTRAR__FECHA.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>MOSTRAR__FECHA.map</FILE>
+  <FILE>MOSTRAR__FECHA.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <tabla_digitos><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>14</LINE></tabla_digitos>
+  <contador_unidades_dia><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>15</LINE></contador_unidades_dia>
+  <contador_decenas_dia><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>16</LINE></contador_decenas_dia>
+  <contador_unidades_mes><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>17</LINE></contador_unidades_mes>
+  <contador_decenas_mes><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>18</LINE></contador_decenas_mes>
+  <contador_dia><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>19</LINE></contador_dia>
+  <contador_mes><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>20</LINE></contador_mes>
+  <estado_led><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>21</LINE></estado_led>
+  <contador_parpadeo><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>22</LINE></contador_parpadeo>
+  <estado_actual><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>23</LINE></estado_actual>
+  <dias_por_mes><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>24</LINE></dias_por_mes>
+  <anio_actual><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>25</LINE></anio_actual>
+  <RESET><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>33</LINE></RESET>
+  <TIMER0_COMPA><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>147</LINE></TIMER0_COMPA>
+  <INICIAR_TABLA_DIAS_MES><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>108</LINE></INICIAR_TABLA_DIAS_MES>
+  <INICIAR_TABLA_DIGITOS><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>83</LINE></INICIAR_TABLA_DIGITOS>
+  <ACTUALIZAR_DISPLAYS_DIA><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>336</LINE></ACTUALIZAR_DISPLAYS_DIA>
+  <ACTUALIZAR_DISPLAYS_MES><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>354</LINE></ACTUALIZAR_DISPLAYS_MES>
+  <MAIN_LOOP_FECHA><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>79</LINE></MAIN_LOOP_FECHA>
+  <MOSTRAR_FECHA><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>186</LINE></MOSTRAR_FECHA>
+  <NO_BISIESTO><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>120</LINE></NO_BISIESTO>
+  <GUARDAR_FEBRERO><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>122</LINE></GUARDAR_FEBRERO>
+  <NO_SEGUNDO_FECHA><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>177</LINE></NO_SEGUNDO_FECHA>
+  <APAGAR_LED_FECHA><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>171</LINE></APAGAR_LED_FECHA>
+  <FIN_LED_FECHA><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>174</LINE></FIN_LED_FECHA>
+  <APAGAR_DISPLAYS><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>212</LINE></APAGAR_DISPLAYS>
+  <MOSTRAR_DIGITO><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>219</LINE></MOSTRAR_DIGITO>
+  <DELAY_MULTIPLEX><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>229</LINE></DELAY_MULTIPLEX>
+  <DELAY_LOOP_FECHA><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>231</LINE></DELAY_LOOP_FECHA>
+  <INCREMENTAR_DIA><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>237</LINE></INCREMENTAR_DIA>
+  <GUARDAR_DIA_INC><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>284</LINE></GUARDAR_DIA_INC>
+  <GUARDAR_MES_INC><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>279</LINE></GUARDAR_MES_INC>
+  <GUARDAR_ANIO_INC><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>275</LINE></GUARDAR_ANIO_INC>
+  <ACTUALIZAR_DISPLAYS_FECHA><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>287</LINE></ACTUALIZAR_DISPLAYS_FECHA>
+  <INCREMENTAR_MES><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>295</LINE></INCREMENTAR_MES>
+  <GUARDAR_MES_DIRECTO><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>308</LINE></GUARDAR_MES_DIRECTO>
+  <FINALIZAR_AJUSTE_DIA><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>330</LINE></FINALIZAR_AJUSTE_DIA>
+  <DECENAS_DIA><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>341</LINE></DECENAS_DIA>
+  <UNIDADES_DIA><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>347</LINE></UNIDADES_DIA>
+  <DECENAS_MES><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>359</LINE></DECENAS_MES>
+  <UNIDADES_MES><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MOSTRAR__FECHA\MOSTRAR__FECHA\main.asm</FILE><LINE>365</LINE></UNIDADES_MES>
+ </LABELS>
+</ASSEMBLER_INFO>

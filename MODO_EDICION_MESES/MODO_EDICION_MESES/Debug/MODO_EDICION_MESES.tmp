@@ -1,0 +1,42 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_MESES\MODO_EDICION_MESES\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_MESES\MODO_EDICION_MESES\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc</FILE>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_MESES\MODO_EDICION_MESES\Debug\MODO_EDICION_MESES.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>MODO_EDICION_MESES.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>MODO_EDICION_MESES.map</FILE>
+  <FILE>MODO_EDICION_MESES.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <tabla_digitos><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_MESES\MODO_EDICION_MESES\main.asm</FILE><LINE>24</LINE></tabla_digitos>
+  <main><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_MESES\MODO_EDICION_MESES\main.asm</FILE><LINE>32</LINE></main>
+  <TIMER0_ISR><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_MESES\MODO_EDICION_MESES\main.asm</FILE><LINE>93</LINE></TIMER0_ISR>
+  <actualizar_display><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_MESES\MODO_EDICION_MESES\main.asm</FILE><LINE>127</LINE></actualizar_display>
+  <loop><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_MESES\MODO_EDICION_MESES\main.asm</FILE><LINE>89</LINE></loop>
+  <leer_botones><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_MESES\MODO_EDICION_MESES\main.asm</FILE><LINE>140</LINE></leer_botones>
+  <multiplexar_displays><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_MESES\MODO_EDICION_MESES\main.asm</FILE><LINE>103</LINE></multiplexar_displays>
+  <mostrar_decenas_mes><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_MESES\MODO_EDICION_MESES\main.asm</FILE><LINE>116</LINE></mostrar_decenas_mes>
+  <mostrar_unidades_mes><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_MESES\MODO_EDICION_MESES\main.asm</FILE><LINE>106</LINE></mostrar_unidades_mes>
+  <calcular_decenas_mes><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_MESES\MODO_EDICION_MESES\main.asm</FILE><LINE>130</LINE></calcular_decenas_mes>
+  <fin_calculo_mes><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_MESES\MODO_EDICION_MESES\main.asm</FILE><LINE>136</LINE></fin_calculo_mes>
+  <incrementar_mes><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_MESES\MODO_EDICION_MESES\main.asm</FILE><LINE>154</LINE></incrementar_mes>
+  <decrementar_mes><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_MESES\MODO_EDICION_MESES\main.asm</FILE><LINE>163</LINE></decrementar_mes>
+  <fin_incremento_mes><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_MESES\MODO_EDICION_MESES\main.asm</FILE><LINE>159</LINE></fin_incremento_mes>
+  <fin_decremento_mes><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_MESES\MODO_EDICION_MESES\main.asm</FILE><LINE>168</LINE></fin_decremento_mes>
+ </LABELS>
+</ASSEMBLER_INFO>

@@ -1,0 +1,42 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_HORA\MODO_EDICION_HORA\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_HORA\MODO_EDICION_HORA\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc</FILE>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_HORA\MODO_EDICION_HORA\Debug\MODO_EDICION_HORA.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>MODO_EDICION_HORA.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>MODO_EDICION_HORA.map</FILE>
+  <FILE>MODO_EDICION_HORA.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <tabla_digitos><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_HORA\MODO_EDICION_HORA\main.asm</FILE><LINE>24</LINE></tabla_digitos>
+  <main><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_HORA\MODO_EDICION_HORA\main.asm</FILE><LINE>35</LINE></main>
+  <TIMER0_ISR><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_HORA\MODO_EDICION_HORA\main.asm</FILE><LINE>99</LINE></TIMER0_ISR>
+  <actualizar_display><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_HORA\MODO_EDICION_HORA\main.asm</FILE><LINE>143</LINE></actualizar_display>
+  <loop><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_HORA\MODO_EDICION_HORA\main.asm</FILE><LINE>92</LINE></loop>
+  <leer_botones><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_HORA\MODO_EDICION_HORA\main.asm</FILE><LINE>159</LINE></leer_botones>
+  <multiplexar_displays><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_HORA\MODO_EDICION_HORA\main.asm</FILE><LINE>114</LINE></multiplexar_displays>
+  <mostrar_decenas_horas><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_HORA\MODO_EDICION_HORA\main.asm</FILE><LINE>129</LINE></mostrar_decenas_horas>
+  <mostrar_unidades_horas><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_HORA\MODO_EDICION_HORA\main.asm</FILE><LINE>118</LINE></mostrar_unidades_horas>
+  <calcular_decenas_horas><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_HORA\MODO_EDICION_HORA\main.asm</FILE><LINE>146</LINE></calcular_decenas_horas>
+  <fin_calculo_horas><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_HORA\MODO_EDICION_HORA\main.asm</FILE><LINE>152</LINE></fin_calculo_horas>
+  <incrementar_horas><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_HORA\MODO_EDICION_HORA\main.asm</FILE><LINE>181</LINE></incrementar_horas>
+  <decrementar_horas><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_HORA\MODO_EDICION_HORA\main.asm</FILE><LINE>190</LINE></decrementar_horas>
+  <fin_incremento_horas><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_HORA\MODO_EDICION_HORA\main.asm</FILE><LINE>186</LINE></fin_incremento_horas>
+  <fin_decremento_horas><FILE>C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\MODO_EDICION_HORA\MODO_EDICION_HORA\main.asm</FILE><LINE>195</LINE></fin_decremento_horas>
+ </LABELS>
+</ASSEMBLER_INFO>

@@ -1,83 +1,241 @@
-.include "m328pdef.inc"
+.INCLUDE "M328PDEF.INC"
 
-.def temp = r16
-.def counter = r17
+.ORG 0X0000        
+    RJMP RESET       
+.ORG PCI0addr         
+    RJMP PCINT0_ISR   
+.ORG OC0AADDR       
+    RJMP TIMER0_COMPA_ISR ; 
 
-.org 0x0000
-    rjmp START          
-.org PCI0addr           ; Dirección de la interrupción PCINT0 (on-change)
-    rjmp ISR_ON_CHANGE  ; Rutina de interrupción 
+; Definicion de variables
+.DEF DIGITO_UNIDADES = R16 ; Dígito de unidades (display)
+.DEF DIGITO_DECENAS  = R17 ; Dígito de decenas (display)
+.DEF CONTADOR        = R18 ; Contador de tiempo
+.DEF DISPLAY_ACTUAL  = R19 ; El display que se muestra
+.DEF CONT_BINARIO    = R21 ; Contador binario para LEDs
+.DEF TEMP            = R20 ; Registro temporal
 
-START:
-    ldi temp, 0x0F      
-    out DDRC, temp
-    clr temp
-    out PORTC, temp     
+;--------------------------------------
+RESET:
+    ; Inicializa stack
+    LDI TEMP, LOW(RAMEND)
+    OUT SPL, TEMP
+    LDI TEMP, HIGH(RAMEND)
+    OUT SPH, TEMP
 
-    ldi temp, 0x00      
-    out DDRB, temp						// Configurar PORTB como entrada
-    ldi temp, (1 << PB3) | (1 << PB4)	// Activar pull-ups internos en PB3 y PB4
-    out PORTB, temp
+    ; Configura PORTD como salida (displays)
+    LDI TEMP, 0XFF
+    OUT DDRD, TEMP
+    CLR TEMP
+    LDI TEMP, 0
+    STS UCSR0B, TEMP
+    OUT PORTD, TEMP
 
+    ; Configura PORTC como salida (LEDs contador)
+    LDI TEMP, 0X0F
+    OUT DDRC, TEMP
+    CLR TEMP
+    OUT PORTC, TEMP
 
-    ldi temp, (1 << PCIE0)             // Habilitar PCINT en PORTB
-    sts PCICR, temp
-    ldi temp, (1 << PCINT3) | (1 << PCINT4) // Habilitar interrupciones en PB3 y PB4
-    sts PCMSK0, temp
+    ; Configura pines para transistores de los displays
+    LDI TEMP, (1 << PB1) | (1 << PB2)
+    OUT DDRB, TEMP
+    CBI PORTB, PB1
+    CBI PORTB, PB2
 
-    ldi counter, 0x00   
-    sei                 ; Habilita interrupciones globales
+    ; Configura botones con pull-up interno
+    CBI DDRB, PB3
+    CBI DDRB, PB4
+    SBI PORTB, PB3
+    SBI PORTB, PB4
+
+    ; Inicializa registros en 0
+    LDI DIGITO_UNIDADES, 0
+    LDI DIGITO_DECENAS, 0
+    CLR CONTADOR
+    CLR DISPLAY_ACTUAL
+    LDI CONT_BINARIO, 0
+
+    ; Configura interrupción de los botones
+    LDI TEMP, (1 << PCIE0)
+    STS PCICR, TEMP
+    LDI TEMP, (1 << PCINT3) | (1 << PCINT4)
+    STS PCMSK0, TEMP
+
+    ; Configura Timer0 para interrupción cada 5ms
+    LDI TEMP, (1 << WGM01)
+    OUT TCCR0A, TEMP
+    LDI TEMP, (1 << CS02) | (1 << CS00)
+    OUT TCCR0B, TEMP
+    LDI TEMP, 77
+    OUT OCR0A, TEMP
+    LDI TEMP, (1 << OCIE0A)
+    STS TIMSK0, TEMP
+
+    SEI ; Habilita interrupciones globales
 
 MAIN_LOOP:
-    rjmp MAIN_LOOP      
+    ; Actualiza LEDs del contador binario
+    MOV TEMP, CONT_BINARIO
+    ANDI TEMP, 0X0F
+    OUT PORTC, TEMP
+    RJMP MAIN_LOOP
 
-;=============================
-;  RUTINA DE INTERRUPCIÓN
-;=============================
-ISR_ON_CHANGE:
-    in temp, PINB       ; Leer estado actual de PORTB
-    sbrs temp, PB3      ; Si PB3 está en bajo (botón incrementar presionado)
-    rcall INCREMENT     ; Llama a la rutina de incremento
-    sbrs temp, PB4      ; Si PB4 está en bajo (botón decrementar presionado)
-    rcall DECREMENT     ; Llama a la rutina de decremento
-    reti                ; Retorna de la interrupción
+;--------------------------------------
+; ISR para incremento/decremento con botones
+;--------------------------------------
+PCINT0_ISR:
+    
+    PUSH TEMP
+    IN TEMP, SREG
+    PUSH TEMP
 
-;=============================
-;  FUNCIÓN: INCREMENTAR CONTADOR
-;=============================
-INCREMENT:
-    rcall DELAY         ; Antirebote
-    inc counter         ; Incrementa el contador
-    andi counter, 0x0F  ; Mantiene el contador en 4 bits (0-15)
-    rcall UPDATE_LEDS   ; Actualiza los LEDs
-    ret
+    ; Incrementa si se presiona PB3
+    SBIC PINB, PB3
+    RJMP NO_INC
+    INC CONT_BINARIO
+NO_INC:
 
-;=============================
-;  FUNCIÓN: DECREMENTAR CONTADOR
-;=============================
-DECREMENT:
-    rcall DELAY         ; Antirebote
-    dec counter         ; Decrementa el contador
-    andi counter, 0x0F  ; Mantiene el contador en 4 bits (0-15)
-    rcall UPDATE_LEDS   ; Actualiza los LEDs
-    ret
+    ; Decrementa si se presiona PB4
+    SBIC PINB, PB4
+    RJMP NO_DEC
+    DEC CONT_BINARIO
+NO_DEC:
 
-;=============================
-;  FUNCIÓN: ACTUALIZAR LEDs
-;=============================
-UPDATE_LEDS:
-    mov temp, counter
-    out PORTC, temp     ; Muestra el valor del contador en los LEDs
-    ret
+    ; Mantiene rango de 4 bits
+    ANDI CONT_BINARIO, 0x0F
 
-;=============================
-;  FUNCIÓN: ANTI-REBOTE
-;=============================
-DELAY:
-    ldi r18, 0xFF       ; Retardo simple
-DELAY_LOOP:
-    dec r18
-    brne DELAY_LOOP
-    ret
+    POP TEMP
+    OUT SREG, TEMP
+    POP TEMP
+    RETI
+;--------------------------------------
+; ISR para actualización de displays y conteo
+;--------------------------------------
+
+TIMER0_COMPA_ISR:
+    PUSH TEMP
+    IN TEMP, SREG
+    PUSH TEMP
+
+    ; Apaga displays y limpia segmentos
+    CBI PORTB, PB1
+    CBI PORTB, PB2
+    CLR TEMP
+    OUT PORTD, TEMP
+
+    ;Lineas de retardo
+    NOP
+    NOP
+    NOP
+
+    ; Valida rango de unidades y decenas
+    CPI DIGITO_UNIDADES, 10
+    BRLO VALIDO_UNIDADES
+    CLR DIGITO_UNIDADES
+VALIDO_UNIDADES:
+
+    CPI DIGITO_DECENAS, 6
+    BRLO VALIDO_DECENAS
+    CLR DIGITO_DECENAS
+VALIDO_DECENAS:
+
+    ; Alterna entre displays
+    CPI DISPLAY_ACTUAL, 0
+    BREQ MOSTRAR_UNIDADES
+
+MOSTRAR_DECENAS:
+    LDI DISPLAY_ACTUAL, 0
+    MOV TEMP, DIGITO_DECENAS
+    RCALL DISPLAY_ACTU
+    SBI PORTB, PB2
+    RJMP CONTAR_TIEMPO
+
+MOSTRAR_UNIDADES:
+    LDI DISPLAY_ACTUAL, 1
+    MOV TEMP, DIGITO_UNIDADES
+    RCALL DISPLAY_ACTU
+    SBI PORTB, PB1
+
+CONTAR_TIEMPO:
+    ; Incrementa tiempo y actualiza dígitos
+    INC CONTADOR
+    CPI CONTADOR, 200
+    BRNE SALIR_ISR
+    CLR CONTADOR
+    INC DIGITO_UNIDADES
+    CPI DIGITO_UNIDADES, 10
+    BRLO SALIR_ISR
+    CLR DIGITO_UNIDADES
+    INC DIGITO_DECENAS
+    CPI DIGITO_DECENAS, 6
+    BRLO SALIR_ISR
+    CLR DIGITO_DECENAS
+    CLR DIGITO_UNIDADES
+
+SALIR_ISR:
+    POP TEMP
+    OUT SREG, TEMP
+    POP TEMP
+    RETI
+
+;--------------------------------------
+; Subrutina para actualizar los displays
+;--------------------------------------
+DISPLAY_ACTU:
+    CPI TEMP, 0
+    BREQ CERO
+    CPI TEMP, 1
+    BREQ UNO
+    CPI TEMP, 2
+    BREQ DOS
+    CPI TEMP, 3
+    BREQ TRES
+    CPI TEMP, 4
+    BREQ CUATRO
+    CPI TEMP, 5
+    BREQ CINCO
+    CPI TEMP, 6
+    BREQ SEIS
+    CPI TEMP, 7
+    BREQ SIETE
+    CPI TEMP, 8
+    BREQ OCHO
+    CPI TEMP, 9
+    BREQ NUEVE
+
+    CLR TEMP
+    RJMP DISP_OUT
+
+CERO:   LDI TEMP, 0xC0 ; Patrón para 0
+        RJMP DISP_OUT
+UNO:    LDI TEMP, 0xF9 ; Patrón para 1
+        RJMP DISP_OUT
+DOS:    LDI TEMP, 0xA4 ; Patrón para 2
+        RJMP DISP_OUT
+TRES:   LDI TEMP, 0xB0 ; Patrón para 3
+        RJMP DISP_OUT
+CUATRO: LDI TEMP, 0x99 ; Patrón para 4
+        RJMP DISP_OUT
+CINCO:  LDI TEMP, 0x92 ; Patrón para 5
+        RJMP DISP_OUT
+SEIS:   LDI TEMP, 0x82 ; Patrón para 6
+        RJMP DISP_OUT
+SIETE:  LDI TEMP, 0xF8 ; Patrón para 7
+        RJMP DISP_OUT
+OCHO:   LDI TEMP, 0x80 ; Patrón para 8
+        RJMP DISP_OUT
+NUEVE:  LDI TEMP, 0x90 ; Patrón para 9
+
+DISP_OUT:
+    ; Actualiza PORTD (Displays)
+    OUT PORTD, TEMP
+    RET
+
+
+
+
+
+
 
 

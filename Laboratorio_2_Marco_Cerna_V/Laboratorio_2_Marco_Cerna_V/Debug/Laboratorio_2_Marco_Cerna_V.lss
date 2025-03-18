@@ -1,10 +1,10 @@
 
-AVRASM ver. 2.2.8  C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_2_Marco_Cerna_V\Laboratorio_2_Marco_Cerna_V\main.asm Thu Feb 13 19:15:55 2025
+AVRASM ver. 2.2.8  C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_2_Marco_Cerna_V\Laboratorio_2_Marco_Cerna_V\main.asm Sun Mar 16 08:57:59 2025
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
-C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_2_Marco_Cerna_V\Laboratorio_2_Marco_Cerna_V\main.asm(54): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328pdef.inc'
+C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_2_Marco_Cerna_V\Laboratorio_2_Marco_Cerna_V\main.asm(11): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
-C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_2_Marco_Cerna_V\Laboratorio_2_Marco_Cerna_V\main.asm(54): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328pdef.inc'
+C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laboratorio_2_Marco_Cerna_V\Laboratorio_2_Marco_Cerna_V\main.asm(11): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
                                  
                                  ;*************************************************
                                  
@@ -996,50 +996,7 @@ C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laborato
                                  ;*************************************************
                                  
                                  
-                                 /*.INCLUDE "m328pdef.inc"
-                                 
-                                 ;Variables:
-                                 .def contador = r16          ; Registro para el contador de 4 bits
-                                 .equ TIMER0_PRELOAD = 20      ; Prescaler para el Timer0
-                                 
-                                 .org 0x0000                  
-                                     LDI r16, 0xFF            ; Configurar PORTB como salida
-                                     OUT DDRB, r16
-                                     LDI contador, 0x00       ; Inicializar el contador en 0
-                                 
-                                     ; Configuración del Timer0
-                                     LDI R17, (1 << CS02) | (1 << CS00)  ; Prescaler 1:1024
-                                     OUT TCCR0B, R17
-                                 
-                                     LDI R17, TIMER0_PRELOAD ; Precarga del Timer0
-                                     OUT TCNT0, R17
-                                 
-                                 MAIN_LOOP:
-                                 	; Esperar desbordamiento del Timer0
-                                 ESPERAR_TIMER0:
-                                     IN R17, TIFR0            ; Leer el registro de flags
-                                     SBRC R17, TOV0           ; Verificar si el bit TOV0 está en 1
-                                     RJMP TIMER_OVERFLOW      ; Si hay desbordamiento
-                                     RJMP ESPERAR_TIMER0      ; Si no, seguir esperando
-                                 
-                                 TIMER_OVERFLOW:
-                                     LDI R17, (1 << TOV0)     ; Limpiar el flag TOV0
-                                     OUT TIFR0, R17
-                                 
-                                     ; Incrementar el contador
-                                     INC contador
-                                     ANDI contador, 0x0F       ; Limitar a 4 bits
-                                 
-                                     ; Mostrar el valor del contador en el puerto B
-                                     OUT PORTB, contador
-                                 
-                                     ; Recargar Timer0
-                                     LDI R17, TIMER0_PRELOAD
-                                     OUT TCNT0, R17
-                                 
-                                     RJMP MAIN_LOOP  */
-                                 
-                                 .INCLUDE "m328pdef.inc"
+                                 .include "m328Pdef.inc"
                                  
                                  ;***** Created: 2011-02-09 12:03 ******* Source: ATmega328P.xml **********
                                  ;*************************************************************************
@@ -1083,87 +1040,205 @@ C:\Users\marco\OneDrive\Documents\GitHub\Microcontroladores-MarcoCernaV\Laborato
                                  #endif  /* _M328PDEF_INC_ */
                                  
                                  ; ***** END OF FILE ******************************************************
-                                 .org 0x0000
-                                 .def CONTADOR = R16
                                  
-                                 //Configuracion de puertos y variables
-                                 	
-000000 ef1f                      	LDI R17, 0xFF            ; Configurar PORTD como salida
-000001 b91a                      	OUT DDRD, R17
-000002 e010                      	LDI R17, 0x00			;Configurar PORTB como entradas
-000003 b914                      	OUT DDRB, R17
-000004 ef1f                      	LDI	R17, 0xFF
-000005 b915                      	OUT	PORTB, R17
+                                 ; ==============================
+                                 ; Definición de registros
+                                 ; ==============================
+                                 .def temp = r16
+                                 .def CONTADOR = r17         ; Contador de 4 bits
+                                 .def CONTADOR2 = r22        ; Contador del display
+                                 .def EstadoBoton = r18      ; Estado actual de los botones
+                                 .def Estado_AntB1 = r19     ; Estado anterior del botón 1
+                                 .def Estado_AntB2 = r20     ; Estado anterior del botón 2
+                                 .def ANTIREBOTE_TEMP = r21  ; Temporal para el antirebote
+                                 .def OVERFLOW_CONT = r23    ; Contador de desbordamientos del Timer0
                                  
-000006 e010                      	LDI R17, 0x00
-000007 9310 00c1                 	STS UCSR0B, R17
-                                 	
+                                 .equ B1 = 1    
+                                 .equ B2 = 2   
+                                 .equ LED_ALARMA = 4 
+                                 .equ PRELOAD = 6  ; Valor para 100ms en Timer0
                                  
-                                 //Configuracion inicial
-                                 	CONFIG:
-000009 e6e8                      	LDI ZL, LOW(Tabla << 1)
-00000a e0f0                      	LDI ZH, HIGH(Tabla << 1)
-00000b 9144                      	LPM R20, Z
-00000c b94b                      	OUT PORTD, R20
+                                 .cseg
+                                 .org 0x00
+000000 c005                          RJMP setup
                                  
+                                 ; ------------------------------
+                                 ; Tabla de segmentos
+                                 ; ------------------------------
+                                 TABLA_SEGMENTOS:
+000001 f9c0
+000002 b0a4
+000003 9299
+000004 f882
+000005 9080                      .DB 0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90
+                                 
+                                 
+                                 ; ------------------------------
+                                 ; Configuración inicial
+                                 ; ------------------------------
+                                 setup:
+                                 
+000006 e008                          LDI temp, high(RAMEND)
+000007 bf0e                          OUT SPH, temp
+000008 ef0f                          LDI temp, low(RAMEND)
+000009 bf0d                          OUT SPL, temp
+                                 
+                                     ; Configurar Pull-ups para los botones (PB3 y PB4)
+00000a e000                          LDI temp, 0x00
+00000b b907                          OUT DDRC, temp
+00000c e006                          LDI temp, (1 << B1) | (1 << B2)
+00000d b908                          OUT PORTC, temp
+00000e e090                      	LDI R25, 0x00
+00000f 9390 00c1                 	STS UCSR0B, R25
+                                 
+                                     ; Configurar PORTD (salida para el display 7 segmentos)
+000011 ef0f                          LDI temp, 0xFF
+000012 b90a                          OUT DDRD, temp
+                                 
+                                     ; Configurar PORTC (salida para LED en PC4/A4)
+000013 e100                          LDI temp, (1 << LED_ALARMA)
+000014 b907                          OUT DDRC, temp
+                                 
+                                     ; Configurar Timer0 (Prescaler 1024)
+000015 e005                          LDI temp, (1 << CS02) | (1 << CS00)
+000016 bd05                          OUT TCCR0B, temp
+                                 
+                                     ; Cargar PRELOAD en Timer0 para 100ms
+000017 e006                          LDI temp, PRELOAD
+000018 bd06                          OUT TCNT0, temp
+                                 
+000019 2711                          CLR CONTADOR
+00001a 2766                          CLR CONTADOR2
+00001b 2777                          CLR OVERFLOW_CONT
+00001c ef3f                          SER Estado_AntB1
+00001d ef4f                          SER Estado_AntB2
+                                 
+00001e d034                          RCALL MOSTRAR_NUM
+                                 
+                                 ; ------------------------------
+                                 ; Bucle principal
+                                 ; ------------------------------
                                  MAIN:
-00000d 9b2d                      	SBIS PORTB, 5
-00000e 940e 0014                 	CALL INCREMENTAR
-000010 9b2c                      	SBIS PORTB, 4
-000011 940e 0025                 	CALL DECREMENTAR
-000013 cff9                      	RJMP MAIN
-                                 	
-                                 	
-                                 INCREMENTAR:
-000014 940e 0030                 	CALL	ANTIREBOTE
-000016 992d                      	SBIC PORTB, 5
-000017 9508                      	RET
-000018 300f                      	CPI	CONTADOR, 0x0F
-000019 f029                      	BREQ REINICIAR
-00001a 9503                      	INC CONTADOR
-00001b 9631                      	ADIW Z,1
-00001c 9144                      	LPM R20, Z
-00001d b94b                      	OUT PORTD,R20
-00001e 9508                      	RET
                                  
-                                 REINICIAR:
-00001f e000                      	LDI CONTADOR, 0x00
-000020 e6e8                      	LDI ZL, LOW(Tabla << 1)
-000021 e0f0                      	LDI ZH, HIGH(Tabla << 1)
-000022 9144                      	LPM R20, Z
-000023 b94b                      	OUT PORTD, R20
-000024 9508                      	RET
+                                 ESPERAR_DES:
+00001f b305                          IN temp, TIFR0
+000020 fd00                          SBRC temp, TOV0
+000021 c001                          RJMP OVERFLOW
+000022 cffc                          RJMP ESPERAR_DES
                                  
-                                 DECREMENTAR: 
-000025 940e 0030                 	CALL	ANTIREBOTE
-000027 992c                      	SBIC PORTB, 4
-000028 9508                      	RET
-000029 3000                      	CPI	CONTADOR, 0x00
-00002a f3a1                      	BREQ REINICIAR
-00002b 9503                      	INC CONTADOR
-00002c 9631                      	ADIW Z,1
-00002d 9144                      	LPM R20, Z
-00002e b94b                      	OUT PORTD,R20
-00002f 9508                      	RET
+                                 ; ------------------------------
+                                 ; Manejo del desbordamiento del Timer0
+                                 ; ------------------------------
+                                 OVERFLOW:
+000023 e001                          LDI temp, (1 << TOV0)
+000024 bb05                          OUT TIFR0, temp
                                  
-                                 ANTIREBOTE:
-000030 e654                          LDI R21, 100  
-                                 DELAY_LOOP:
-000031 955a                          DEC R21
-000032 f7f1                          BRNE DELAY_LOOP
-000033 9508                      	RET 
-                                 
-000034 307e
-000035 796d
-000036 5b33
-000037 705f
-000038 7b7f
-000039 1f77
-00003a 3d4e
-00003b 474f                      Tabla: .DB 0x7E, 0x30, 0x6D, 0x79, 0x33, 0x5B, 0x5F, 0x70, 0x7F, 0x7B, 0x77, 0x1F, 0x4E, 0x3D, 0x4F, 0x47
+000025 9573                          INC OVERFLOW_CONT
                                  
                                  
+000026 307a                          CPI OVERFLOW_CONT, 10 ; Comparar numero de desbordamientos 
+000027 f040                          BRLO SKIP_CONTADOR
                                  
+                                 
+000028 2777                          CLR OVERFLOW_CONT
+000029 9563                          INC CONTADOR2
+00002a 706f                          ANDI CONTADOR2, 0x0F
+00002b b968                          OUT PORTC, CONTADOR2
+                                 
+                                     
+00002c 1761                          CP CONTADOR2, CONTADOR ; Comparar CONTADOR2 con CONTADOR
+00002d f411                          BRNE SKIP_LED
+00002e 2766                          CLR CONTADOR2
+00002f 9a34                          SBI PINC, LED_ALARMA
+                                 
+                                 SKIP_LED:
+                                 SKIP_CONTADOR:
+                                 
+000030 e006                          LDI temp, PRELOAD
+000031 bd06                          OUT TCNT0, temp     ; Recargar Timer0
+                                 
+000032 d001                          RCALL CHECK_BOTONES
+000033 cfeb                          RJMP MAIN
+                                 
+                                 ; ------------------------------
+                                 ; Leer y procesar los botones
+                                 ; ------------------------------
+                                 CHECK_BOTONES:
+000034 b126                          IN EstadoBoton, PINC
+                                 
+000035 2f52                          MOV ANTIREBOTE_TEMP, EstadoBoton
+000036 9550                          COM ANTIREBOTE_TEMP
+000037 7052                          ANDI ANTIREBOTE_TEMP, (1 << B1)
+000038 f011                          BREQ SALTAR_B1
+000039 fd31                          SBRC Estado_AntB1, B1
+00003a d009                          RCALL INCREMENTO
+                                 
+                                 SALTAR_B1:
+                                 
+00003b 2f52                          MOV ANTIREBOTE_TEMP, EstadoBoton
+00003c 9550                          COM ANTIREBOTE_TEMP
+00003d 7054                          ANDI ANTIREBOTE_TEMP, (1 << B2)
+00003e f011                          BREQ SALTAR_B2
+00003f fd42                          SBRC Estado_AntB2, B2
+000040 d00a                          RCALL DECREMENTO
+                                 
+                                 SALTAR_B2:
+                                 
+000041 2f32                          MOV Estado_AntB1, EstadoBoton
+000042 2f42                          MOV Estado_AntB2, EstadoBoton
+                                 
+000043 9508                          RET
+                                 
+                                 ; ------------------------------
+                                 ; Incrementar Contador
+                                 ; ------------------------------
+                                 INCREMENTO:
+000044 d014                          RCALL DELAY_ANTIREBOTE
+000045 9513                          INC CONTADOR
+000046 3110                          CPI CONTADOR, 0x10
+000047 f409                          BRNE NO_RESET_INC
+000048 2711                          CLR CONTADOR
+                                 
+                                 NO_RESET_INC:
+000049 d009                          RCALL MOSTRAR_NUM
+00004a 9508                          RET
+                                 
+                                 ; ------------------------------
+                                 ; Decrementar Contador
+                                 ; ------------------------------
+                                 DECREMENTO:
+00004b d00d                          RCALL DELAY_ANTIREBOTE
+00004c 2311                          TST CONTADOR
+00004d f411                          BRNE NO_RESET_DEC
+00004e e01f                          LDI CONTADOR, 0x0F
+00004f c003                          RJMP MOSTRAR_NUM
+                                 
+                                 NO_RESET_DEC:
+000050 951a                          DEC CONTADOR
+000051 d001                          RCALL MOSTRAR_NUM
+000052 9508                          RET
+                                 
+                                 ; ------------------------------
+                                 ; Mostrar número en display
+                                 ; ------------------------------
+                                 MOSTRAR_NUM:
+000053 e0f0                          LDI ZH, HIGH(TABLA_SEGMENTOS << 1)
+000054 e0e2                          LDI ZL, LOW(TABLA_SEGMENTOS << 1)
+000055 0fe1                          ADD ZL, CONTADOR
+000056 9104                          LPM temp, Z
+000057 b90b                          OUT PORTD, temp
+000058 9508                          RET
+                                 
+                                 ; ------------------------------
+                                 ; Delay antirebote
+                                 ; ------------------------------
+                                 DELAY_ANTIREBOTE:
+000059 e684                          LDI r24, 100
+00005a ef9f                      L1: LDI r25, 255
+00005b 959a                      L2: DEC r25
+00005c f7f1                          BRNE L2
+00005d 958a                          DEC r24
+00005e f7d9                          BRNE L1
 
 
 RESOURCE USE INFORMATION
@@ -1181,39 +1256,39 @@ counted separately from r26..r31 here.
 .dseg memory usage only counts static data declared with .byte
 
 "ATmega328P" register use summary:
-x  :   0 y  :   0 z  :   6 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
+x  :   0 y  :   0 z  :   1 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16:   5 r17:   8 r18:   0 r19:   0 r20:   8 
-r21:   2 r22:   0 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 
-r29:   0 r30:   2 r31:   2 
-Registers used: 7 out of 35 (20.0%)
+r13:   0 r14:   0 r15:   0 r16:  24 r17:   9 r18:   5 r19:   3 r20:   3 
+r21:   6 r22:   6 r23:   4 r24:   2 r25:   4 r26:   0 r27:   0 r28:   0 
+r29:   0 r30:   2 r31:   1 
+Registers used: 13 out of 35 (37.1%)
 
 "ATmega328P" instruction use summary:
-.lds  :   0 .sts  :   0 adc   :   0 add   :   0 adiw  :   2 and   :   0 
-andi  :   0 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
+.lds  :   0 .sts  :   0 adc   :   0 add   :   1 adiw  :   0 and   :   0 
+andi  :   3 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
 brcc  :   0 brcs  :   0 break :   0 breq  :   2 brge  :   0 brhc  :   0 
-brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
-brne  :   1 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
-brvs  :   0 bset  :   0 bst   :   0 call  :   4 cbi   :   0 cbr   :   0 
-clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 
-clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
-cpi   :   2 cpse  :   0 dec   :   1 eor   :   0 fmul  :   0 fmuls :   0 
-fmulsu:   0 icall :   0 ijmp  :   0 in    :   0 inc   :   2 jmp   :   0 
-ld    :   0 ldd   :   0 ldi   :  10 lds   :   0 lpm   :   8 lsl   :   0 
-lsr   :   0 mov   :   0 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
-neg   :   0 nop   :   0 or    :   0 ori   :   0 out   :   7 pop   :   0 
-push  :   0 rcall :   0 ret   :   6 reti  :   0 rjmp  :   1 rol   :   0 
-ror   :   0 sbc   :   0 sbci  :   0 sbi   :   0 sbic  :   2 sbis  :   2 
-sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   0 sec   :   0 seh   :   0 
-sei   :   0 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
+brhs  :   0 brid  :   0 brie  :   0 brlo  :   1 brlt  :   0 brmi  :   0 
+brne  :   5 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
+brvs  :   0 bset  :   0 bst   :   0 call  :   0 cbi   :   0 cbr   :   0 
+clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   6 cls   :   0 
+clt   :   0 clv   :   0 clz   :   0 com   :   2 cp    :   1 cpc   :   0 
+cpi   :   2 cpse  :   0 dec   :   3 eor   :   0 fmul  :   0 fmuls :   0 
+fmulsu:   0 icall :   0 ijmp  :   0 in    :   2 inc   :   3 jmp   :   0 
+ld    :   0 ldd   :   0 ldi   :  16 lds   :   0 lpm   :   2 lsl   :   0 
+lsr   :   0 mov   :   4 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
+neg   :   0 nop   :   0 or    :   0 ori   :   0 out   :  12 pop   :   0 
+push  :   0 rcall :   8 ret   :   5 reti  :   0 rjmp  :   5 rol   :   0 
+ror   :   0 sbc   :   0 sbci  :   0 sbi   :   1 sbic  :   0 sbis  :   0 
+sbiw  :   0 sbr   :   0 sbrc  :   3 sbrs  :   0 sec   :   0 seh   :   0 
+sei   :   0 sen   :   0 ser   :   2 ses   :   0 set   :   0 sev   :   0 
 sez   :   0 sleep :   0 spm   :   0 st    :   0 std   :   0 sts   :   1 
-sub   :   0 subi  :   0 swap  :   0 tst   :   0 wdr   :   0 
-Instructions used: 15 out of 113 (13.3%)
+sub   :   0 subi  :   0 swap  :   0 tst   :   1 wdr   :   0 
+Instructions used: 24 out of 113 (21.2%)
 
 "ATmega328P" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000078    104     16    120   32768   0.4%
+[.cseg] 0x000000 0x0000c0    182     10    192   32768   0.6%
 [.dseg] 0x000100 0x000100      0      0      0    2048   0.0%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 

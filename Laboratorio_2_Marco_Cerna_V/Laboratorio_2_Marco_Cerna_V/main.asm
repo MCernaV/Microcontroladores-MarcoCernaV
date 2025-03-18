@@ -22,8 +22,8 @@
 .def ANTIREBOTE_TEMP = r21  ; Temporal para el antirebote
 .def OVERFLOW_CONT = r23    ; Contador de desbordamientos del Timer0
 
-.equ B1 = 3    
-.equ B2 = 4    
+.equ B1 = 1    
+.equ B2 = 2   
 .equ LED_ALARMA = 4 
 .equ PRELOAD = 6  ; Valor para 100ms en Timer0
 
@@ -35,7 +35,7 @@
 ; Tabla de segmentos
 ; ------------------------------
 TABLA_SEGMENTOS:
-.DB 0b0111111, 0b0000110, 0b1011011, 0b1001111, 0b1100110, 0b1101101, 0b1111101, 0b0000111, 0b1111111, 0b1101111, 0b1110111, 0b1111100, 0b0111001, 0b1011110, 0b1111001, 0b1110001
+.DB 0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90
 
 
 ; ------------------------------
@@ -50,9 +50,9 @@ setup:
 
     ; Configurar Pull-ups para los botones (PB3 y PB4)
     LDI temp, 0x00
-    OUT DDRB, temp
+    OUT DDRC, temp
     LDI temp, (1 << B1) | (1 << B2)
-    OUT PORTB, temp
+    OUT PORTC, temp
 	LDI R25, 0x00
 	STS UCSR0B, R25
 
@@ -129,7 +129,7 @@ SKIP_CONTADOR:
 ; Leer y procesar los botones
 ; ------------------------------
 CHECK_BOTONES:
-    IN EstadoBoton, PINB
+    IN EstadoBoton, PINC
 
     MOV ANTIREBOTE_TEMP, EstadoBoton
     COM ANTIREBOTE_TEMP
